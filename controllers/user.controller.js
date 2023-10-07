@@ -22,11 +22,11 @@ module.exports = {
     if (user.isBlock) {
       throw new ErrorResponse(400, "Tài khoản đã bị khóa do nợ quá 1 tuần");
     }
-    // const currentAccessTimes = await parameterModel.findOne();
+    const currentAccessTimes = await parameterModel.findOne();
 
-    // await parameterModel.findByIdAndUpdate("63b9a550f0eeb779d4a61b09", {
-    //   accessTimes: currentAccessTimes?.accessTimes + 1,
-    // });
+    await parameterModel.findByIdAndUpdate("652161eefb04cec8a0619b9d", {
+      accessTimes: currentAccessTimes?.accessTimes + 1,
+    });
 
     return res.status(200).json(user);
     } catch (error) {

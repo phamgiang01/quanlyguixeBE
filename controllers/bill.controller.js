@@ -22,7 +22,7 @@ module.exports = {
   cash: async (req, res, next) => {
     const currentRenevue = await parameterModel.findOne();
 
-    await parameterModel.findByIdAndUpdate("63b9a550f0eeb779d4a61b09", {
+    await parameterModel.findByIdAndUpdate("652161eefb04cec8a0619b9d", {
       revenue: currentRenevue.revenue + Number(req.body.money),
     });
 
